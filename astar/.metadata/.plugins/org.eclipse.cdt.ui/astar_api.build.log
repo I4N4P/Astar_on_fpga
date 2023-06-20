@@ -1,0 +1,73 @@
+14:56:36 **** Build of configuration Debug for project astar_api ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/sw/astar_HW/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'printBits':
+../src/main.c:501:10: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  501 |          printf("@");
+      |          ^~~~~~
+../src/main.c:501:10: warning: incompatible implicit declaration of built-in function 'printf'
+../src/main.c:102:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+  101 |  #include "xscugic.h"
+  +++ |+#include <stdio.h>
+  102 | #endif
+../src/main.c:503:10: warning: incompatible implicit declaration of built-in function 'printf'
+  503 |          printf("!");
+      |          ^~~~~~
+../src/main.c:503:10: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/main.c:505:10: warning: incompatible implicit declaration of built-in function 'printf'
+  505 |          printf("+");
+      |          ^~~~~~
+../src/main.c:505:10: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/main.c:507:10: warning: incompatible implicit declaration of built-in function 'printf'
+  507 |          printf("-");
+      |          ^~~~~~
+../src/main.c:507:10: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/main.c:509:10: warning: incompatible implicit declaration of built-in function 'printf'
+  509 |          printf(".");
+      |          ^~~~~~
+../src/main.c:509:10: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/main.c:519:10: warning: incompatible implicit declaration of built-in function 'printf'
+  519 |          printf("@");
+      |          ^~~~~~
+../src/main.c:519:10: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/main.c:521:10: warning: incompatible implicit declaration of built-in function 'printf'
+  521 |          printf("!");
+      |          ^~~~~~
+../src/main.c:521:10: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/main.c:523:10: warning: incompatible implicit declaration of built-in function 'printf'
+  523 |          printf("+");
+      |          ^~~~~~
+../src/main.c:523:10: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/main.c:525:10: warning: incompatible implicit declaration of built-in function 'printf'
+  525 |          printf("-");
+      |          ^~~~~~
+../src/main.c:525:10: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/main.c:527:10: warning: incompatible implicit declaration of built-in function 'printf'
+  527 |          printf(".");
+      |          ^~~~~~
+../src/main.c:527:10: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/main.c:531:5: warning: implicit declaration of function 'puts' [-Wimplicit-function-declaration]
+  531 |     puts("");
+      |     ^~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: astar_api.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/sw/astar_HW/standalone_domain/bsplib/lib -o "astar_api.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: astar_api.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size astar_api.elf  |tee "astar_api.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  50416	   3064	  24680	  78160	  13150	astar_api.elf
+'Finished building: astar_api.elf.size'
+' '
+
+14:56:43 Build Finished (took 6s.145ms)
+

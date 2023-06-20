@@ -1,0 +1,5 @@
+vhdl xil_defaultlib  \
+"../../../bd/astar_design/ip/astar_design_axi_dma_0_0/sim/astar_design_axi_dma_0_0.vhd" \
+"../../../bd/astar_design/ip/astar_design_rst_ps7_0_100M_0/sim/astar_design_rst_ps7_0_100M_0.vhd" \
+
+nosort
