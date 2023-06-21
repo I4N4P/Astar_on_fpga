@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:astar_stream:1.0
-// IP Revision: 54
+// IP Revision: 61
 
 `timescale 1ns/1ps
 

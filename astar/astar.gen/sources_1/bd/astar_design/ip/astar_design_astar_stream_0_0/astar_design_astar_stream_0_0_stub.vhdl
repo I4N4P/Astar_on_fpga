@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
--- Date        : Tue Jun 20 14:24:58 2023
+-- Date        : Wed Jun 21 13:24:07 2023
 -- Host        : chi_brat_patrzy running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ip/astar_design_astar_stream_0_0/astar_design_astar_stream_0_0_stub.vhdl

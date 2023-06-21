@@ -1,0 +1,104 @@
+12:06:10 **** Incremental Build of configuration Debug for project astar_api_24 ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_hw_24/export/astar_hw_24/sw/astar_hw_24/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:398:18: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
+  398 |          scanf("%d\n\r",&maze[i]);
+      |                 ~^      ~~~~~~~~
+      |                  |      |
+      |                  int *  u32 * {aka long unsigned int *}
+      |                 %ld
+../src/main.c:400:18: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
+  400 |          scanf("%d\n\r",&start_x);
+      |                 ~^      ~~~~~~~~
+      |                  |      |
+      |                  int *  u32 * {aka long unsigned int *}
+      |                 %ld
+../src/main.c:401:18: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
+  401 |          scanf("%d\n\r",&start_y);
+      |                 ~^      ~~~~~~~~
+      |                  |      |
+      |                  int *  u32 * {aka long unsigned int *}
+      |                 %ld
+../src/main.c:402:18: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
+  402 |          scanf("%d\n\r",&stop_x);
+      |                 ~^      ~~~~~~~
+      |                  |      |
+      |                  int *  u32 * {aka long unsigned int *}
+      |                 %ld
+../src/main.c:403:18: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
+  403 |          scanf("%d\n\r",&stop_y);
+      |                 ~^      ~~~~~~~
+      |                  |      |
+      |                  int *  u32 * {aka long unsigned int *}
+      |                 %ld
+../src/main.c:409:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+  409 |                 printf("%d\n\r",maze[i]);
+      |                         ~^      ~~~~~~~
+      |                          |          |
+      |                          int        u32 {aka long unsigned int}
+      |                         %ld
+../src/main.c:413:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+  413 |                 printf("%d\n\r",open_list[i]);
+      |                         ~^      ~~~~~~~~~~~~
+      |                          |               |
+      |                          int             u32 {aka long unsigned int}
+      |                         %ld
+../src/main.c:417:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+  417 |                 printf("%d\n\r",close_list[i]);
+      |                         ~^      ~~~~~~~~~~~~~
+      |                          |                |
+      |                          int              u32 {aka long unsigned int}
+      |                         %ld
+../src/main.c:421:20: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+  421 |           printf("%d\n\r",path_list[i]);
+      |                   ~^      ~~~~~~~~~~~~
+      |                    |               |
+      |                    int             u32 {aka long unsigned int}
+      |                   %ld
+../src/main.c:424:19: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+  424 |          printf("%d\n\r",start_x);
+      |                  ~^      ~~~~~~~
+      |                   |      |
+      |                   int    u32 {aka long unsigned int}
+      |                  %ld
+../src/main.c:425:19: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+  425 |          printf("%d\n\r",start_y);
+      |                  ~^      ~~~~~~~
+      |                   |      |
+      |                   int    u32 {aka long unsigned int}
+      |                  %ld
+../src/main.c:427:19: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+  427 |          printf("%d\n\r",stop_x);
+      |                  ~^      ~~~~~~
+      |                   |      |
+      |                   int    u32 {aka long unsigned int}
+      |                  %ld
+../src/main.c:428:19: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+  428 |          printf("%d\n\r",stop_y);
+      |                  ~^      ~~~~~~
+      |                   |      |
+      |                   int    u32 {aka long unsigned int}
+      |                  %ld
+'Finished building: ../src/main.c'
+' '
+'Building target: astar_api_24.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_hw_24/export/astar_hw_24/sw/astar_hw_24/standalone_domain/bsplib/lib -o "astar_api_24.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: astar_api_24.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size astar_api_24.elf  |tee "astar_api_24.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  97108	   3494	  24880	 125482	  1ea2a	astar_api_24.elf
+'Finished building: astar_api_24.elf.size'
+' '
+
+12:06:16 Build Finished (took 5s.922ms)
+

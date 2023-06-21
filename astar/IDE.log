@@ -56,3 +56,599 @@ con
 ----------------End of Script----------------
 
 14:58:22 INFO  : Launch script is exported to file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api_system\_ide\scripts\systemdebugger_astar_api_system_standalone.tcl'
+16:24:19 INFO  : Disconnected from the channel tcfchan#3.
+21:40:47 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\temp_xsdb_launch_script.tcl
+21:40:57 INFO  : XSCT server has started successfully.
+21:40:57 INFO  : plnx-install-location is set to ''
+21:40:57 INFO  : Successfully done setting XSCT server connection channel  
+21:40:57 INFO  : Successfully done setting workspace for the tool. 
+21:41:09 INFO  : Platform repository initialization has completed.
+21:41:10 INFO  : Registering command handlers for Vitis TCF services
+21:41:16 INFO  : Successfully done query RDI_DATADIR 
+21:42:12 INFO  : Hardware specification for platform project 'astar_HW' is updated.
+21:42:33 INFO  : Result from executing command 'getProjects': astar_HW
+21:42:33 INFO  : Result from executing command 'getPlatforms': astar_HW|C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/astar_HW.xpfm
+21:45:02 INFO  : Checking for BSP changes to sync application flags for project 'astar_api'...
+21:45:08 INFO  : The hardware specfication used by project 'astar_api' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+21:45:08 INFO  : The file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api\_ide\bitstream\astar_design_wrapper.bit' stored in project is removed.
+21:45:08 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api\_ide\bitstream' in project 'astar_api'.
+21:45:08 INFO  : The file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api\_ide\psinit\ps7_init.tcl' stored in project is removed.
+21:45:16 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api\_ide\psinit' in project 'astar_api'.
+21:45:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:45:54 INFO  : Jtag cable 'Digilent Arty Z7 003017B7E9A2A' is selected.
+21:45:54 INFO  : 'jtag frequency' command is executed.
+21:45:54 INFO  : Context for 'APU' is selected.
+21:45:54 INFO  : System reset is completed.
+21:45:57 INFO  : 'after 3000' command is executed.
+21:45:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}' command is executed.
+21:46:00 INFO  : Device configured successfully with "C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit"
+21:46:00 INFO  : Context for 'APU' is selected.
+21:46:00 INFO  : Hardware design and registers information is loaded from 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa'.
+21:46:00 INFO  : 'configparams force-mem-access 1' command is executed.
+21:46:00 INFO  : Context for 'APU' is selected.
+21:46:00 INFO  : Sourcing of 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl' is done.
+21:46:01 INFO  : 'ps7_init' command is executed.
+21:46:01 INFO  : 'ps7_post_config' command is executed.
+21:46:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:46:01 INFO  : The application 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:46:01 INFO  : 'configparams force-mem-access 0' command is executed.
+21:46:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}
+fpga -file C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:46:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:46:01 INFO  : 'con' command is executed.
+21:46:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:46:01 INFO  : Launch script is exported to file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api_system\_ide\scripts\systemdebugger_astar_api_system_standalone.tcl'
+21:47:21 INFO  : Checking for BSP changes to sync application flags for project 'astar_api'...
+21:47:56 INFO  : Disconnected from the channel tcfchan#3.
+21:47:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:47:57 INFO  : Jtag cable 'Digilent Arty Z7 003017B7E9A2A' is selected.
+21:47:57 INFO  : 'jtag frequency' command is executed.
+21:47:57 INFO  : Context for 'APU' is selected.
+21:47:57 INFO  : System reset is completed.
+21:48:00 INFO  : 'after 3000' command is executed.
+21:48:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}' command is executed.
+21:48:03 INFO  : Device configured successfully with "C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit"
+21:48:03 INFO  : Context for 'APU' is selected.
+21:48:03 INFO  : Hardware design and registers information is loaded from 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa'.
+21:48:03 INFO  : 'configparams force-mem-access 1' command is executed.
+21:48:03 INFO  : Context for 'APU' is selected.
+21:48:03 INFO  : Sourcing of 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl' is done.
+21:48:03 INFO  : 'ps7_init' command is executed.
+21:48:03 INFO  : 'ps7_post_config' command is executed.
+21:48:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:48:04 INFO  : The application 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:48:04 INFO  : 'configparams force-mem-access 0' command is executed.
+21:48:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}
+fpga -file C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:48:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:48:04 INFO  : 'con' command is executed.
+21:48:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:48:04 INFO  : Launch script is exported to file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api_system\_ide\scripts\debugger_astar_api-default.tcl'
+21:50:09 INFO  : Checking for BSP changes to sync application flags for project 'astar_api'...
+21:50:32 INFO  : Disconnected from the channel tcfchan#4.
+21:50:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:50:33 INFO  : Jtag cable 'Digilent Arty Z7 003017B7E9A2A' is selected.
+21:50:33 INFO  : 'jtag frequency' command is executed.
+21:50:33 INFO  : Context for 'APU' is selected.
+21:50:33 INFO  : System reset is completed.
+21:50:36 INFO  : 'after 3000' command is executed.
+21:50:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}' command is executed.
+21:50:38 INFO  : Device configured successfully with "C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit"
+21:50:38 INFO  : Context for 'APU' is selected.
+21:50:39 INFO  : Hardware design and registers information is loaded from 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa'.
+21:50:39 INFO  : 'configparams force-mem-access 1' command is executed.
+21:50:39 INFO  : Context for 'APU' is selected.
+21:50:39 INFO  : Sourcing of 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl' is done.
+21:50:39 INFO  : 'ps7_init' command is executed.
+21:50:39 INFO  : 'ps7_post_config' command is executed.
+21:50:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:50:39 INFO  : The application 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:50:40 INFO  : 'configparams force-mem-access 0' command is executed.
+21:50:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}
+fpga -file C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:50:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:50:40 INFO  : 'con' command is executed.
+21:50:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:50:40 INFO  : Launch script is exported to file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api_system\_ide\scripts\debugger_astar_api-default.tcl'
+21:53:22 INFO  : Checking for BSP changes to sync application flags for project 'astar_api'...
+21:53:30 INFO  : Disconnected from the channel tcfchan#5.
+21:53:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:53:31 INFO  : Jtag cable 'Digilent Arty Z7 003017B7E9A2A' is selected.
+21:53:31 INFO  : 'jtag frequency' command is executed.
+21:53:32 INFO  : Context for 'APU' is selected.
+21:53:32 INFO  : System reset is completed.
+21:53:35 INFO  : 'after 3000' command is executed.
+21:53:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}' command is executed.
+21:53:37 INFO  : Device configured successfully with "C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit"
+21:53:37 INFO  : Context for 'APU' is selected.
+21:53:37 INFO  : Hardware design and registers information is loaded from 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa'.
+21:53:37 INFO  : 'configparams force-mem-access 1' command is executed.
+21:53:37 INFO  : Context for 'APU' is selected.
+21:53:37 INFO  : Sourcing of 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl' is done.
+21:53:38 INFO  : 'ps7_init' command is executed.
+21:53:38 INFO  : 'ps7_post_config' command is executed.
+21:53:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:53:38 INFO  : The application 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:53:38 INFO  : 'configparams force-mem-access 0' command is executed.
+21:53:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}
+fpga -file C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:53:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:53:38 INFO  : 'con' command is executed.
+21:53:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:53:38 INFO  : Launch script is exported to file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api_system\_ide\scripts\debugger_astar_api-default.tcl'
+21:54:28 INFO  : Checking for BSP changes to sync application flags for project 'astar_api'...
+21:54:37 INFO  : Disconnected from the channel tcfchan#6.
+21:54:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:54:38 INFO  : Jtag cable 'Digilent Arty Z7 003017B7E9A2A' is selected.
+21:54:38 INFO  : 'jtag frequency' command is executed.
+21:54:38 INFO  : Context for 'APU' is selected.
+21:54:38 INFO  : System reset is completed.
+21:54:41 INFO  : 'after 3000' command is executed.
+21:54:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}' command is executed.
+21:54:44 INFO  : Device configured successfully with "C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit"
+21:54:44 INFO  : Context for 'APU' is selected.
+21:54:44 INFO  : Hardware design and registers information is loaded from 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa'.
+21:54:44 INFO  : 'configparams force-mem-access 1' command is executed.
+21:54:44 INFO  : Context for 'APU' is selected.
+21:54:44 INFO  : Sourcing of 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl' is done.
+21:54:44 INFO  : 'ps7_init' command is executed.
+21:54:44 INFO  : 'ps7_post_config' command is executed.
+21:54:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:54:45 INFO  : The application 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:54:45 INFO  : 'configparams force-mem-access 0' command is executed.
+21:54:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}
+fpga -file C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:54:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:54:45 INFO  : 'con' command is executed.
+21:54:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:54:45 INFO  : Launch script is exported to file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api_system\_ide\scripts\debugger_astar_api-default.tcl'
+21:56:28 INFO  : Checking for BSP changes to sync application flags for project 'astar_api'...
+21:56:38 INFO  : Disconnected from the channel tcfchan#7.
+21:56:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:56:39 INFO  : Jtag cable 'Digilent Arty Z7 003017B7E9A2A' is selected.
+21:56:39 INFO  : 'jtag frequency' command is executed.
+21:56:39 INFO  : Context for 'APU' is selected.
+21:56:39 INFO  : System reset is completed.
+21:56:42 INFO  : 'after 3000' command is executed.
+21:56:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}' command is executed.
+21:56:45 INFO  : Device configured successfully with "C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit"
+21:56:45 INFO  : Context for 'APU' is selected.
+21:56:45 INFO  : Hardware design and registers information is loaded from 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa'.
+21:56:45 INFO  : 'configparams force-mem-access 1' command is executed.
+21:56:45 INFO  : Context for 'APU' is selected.
+21:56:45 INFO  : Sourcing of 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl' is done.
+21:56:45 INFO  : 'ps7_init' command is executed.
+21:56:45 INFO  : 'ps7_post_config' command is executed.
+21:56:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:56:46 INFO  : The application 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:56:46 INFO  : 'configparams force-mem-access 0' command is executed.
+21:56:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}
+fpga -file C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:56:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:56:46 INFO  : 'con' command is executed.
+21:56:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:56:46 INFO  : Launch script is exported to file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api_system\_ide\scripts\debugger_astar_api-default.tcl'
+22:06:11 INFO  : Checking for BSP changes to sync application flags for project 'astar_api'...
+22:06:26 INFO  : Disconnected from the channel tcfchan#8.
+22:06:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:06:27 INFO  : Jtag cable 'Digilent Arty Z7 003017B7E9A2A' is selected.
+22:06:27 INFO  : 'jtag frequency' command is executed.
+22:06:27 INFO  : Context for 'APU' is selected.
+22:06:28 INFO  : System reset is completed.
+22:06:31 INFO  : 'after 3000' command is executed.
+22:06:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}' command is executed.
+22:06:33 INFO  : Device configured successfully with "C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit"
+22:06:33 INFO  : Context for 'APU' is selected.
+22:06:33 INFO  : Hardware design and registers information is loaded from 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa'.
+22:06:33 INFO  : 'configparams force-mem-access 1' command is executed.
+22:06:33 INFO  : Context for 'APU' is selected.
+22:06:33 INFO  : Sourcing of 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl' is done.
+22:06:33 INFO  : 'ps7_init' command is executed.
+22:06:33 INFO  : 'ps7_post_config' command is executed.
+22:06:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:06:34 INFO  : The application 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:06:34 INFO  : 'configparams force-mem-access 0' command is executed.
+22:06:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}
+fpga -file C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:06:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:06:34 INFO  : 'con' command is executed.
+22:06:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:06:34 INFO  : Launch script is exported to file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api_system\_ide\scripts\debugger_astar_api-default.tcl'
+22:09:04 INFO  : Checking for BSP changes to sync application flags for project 'astar_api'...
+22:09:30 INFO  : Disconnected from the channel tcfchan#9.
+22:09:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:09:32 INFO  : Jtag cable 'Digilent Arty Z7 003017B7E9A2A' is selected.
+22:09:32 INFO  : 'jtag frequency' command is executed.
+22:09:32 INFO  : Context for 'APU' is selected.
+22:09:32 INFO  : System reset is completed.
+22:09:35 INFO  : 'after 3000' command is executed.
+22:09:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}' command is executed.
+22:09:38 INFO  : Device configured successfully with "C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit"
+22:09:38 INFO  : Context for 'APU' is selected.
+22:09:38 INFO  : Hardware design and registers information is loaded from 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa'.
+22:09:38 INFO  : 'configparams force-mem-access 1' command is executed.
+22:09:38 INFO  : Context for 'APU' is selected.
+22:09:38 INFO  : Sourcing of 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl' is done.
+22:09:40 INFO  : 'ps7_init' command is executed.
+22:09:40 INFO  : 'ps7_post_config' command is executed.
+22:09:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:09:41 INFO  : The application 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:09:41 INFO  : 'configparams force-mem-access 0' command is executed.
+22:09:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}
+fpga -file C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:09:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:09:41 INFO  : 'con' command is executed.
+22:09:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:09:41 INFO  : Launch script is exported to file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api_system\_ide\scripts\debugger_astar_api-default.tcl'
+22:10:53 INFO  : Checking for BSP changes to sync application flags for project 'astar_api'...
+22:11:00 INFO  : Disconnected from the channel tcfchan#10.
+22:11:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:11:01 INFO  : Jtag cable 'Digilent Arty Z7 003017B7E9A2A' is selected.
+22:11:02 INFO  : 'jtag frequency' command is executed.
+22:11:02 INFO  : Context for 'APU' is selected.
+22:11:02 INFO  : System reset is completed.
+22:11:05 INFO  : 'after 3000' command is executed.
+22:11:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}' command is executed.
+22:11:07 INFO  : Device configured successfully with "C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit"
+22:11:07 INFO  : Context for 'APU' is selected.
+22:11:07 INFO  : Hardware design and registers information is loaded from 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa'.
+22:11:07 INFO  : 'configparams force-mem-access 1' command is executed.
+22:11:07 INFO  : Context for 'APU' is selected.
+22:11:07 INFO  : Sourcing of 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl' is done.
+22:11:08 INFO  : 'ps7_init' command is executed.
+22:11:08 INFO  : 'ps7_post_config' command is executed.
+22:11:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:11:08 INFO  : The application 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:11:08 INFO  : 'configparams force-mem-access 0' command is executed.
+22:11:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}
+fpga -file C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:11:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:11:08 INFO  : 'con' command is executed.
+22:11:08 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:11:08 INFO  : Launch script is exported to file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api_system\_ide\scripts\debugger_astar_api-default.tcl'
+22:12:09 INFO  : Disconnected from the channel tcfchan#11.
+11:10:39 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\temp_xsdb_launch_script.tcl
+11:10:47 INFO  : XSCT server has started successfully.
+11:10:47 INFO  : Successfully done setting XSCT server connection channel  
+11:10:47 INFO  : plnx-install-location is set to ''
+11:10:47 INFO  : Successfully done setting workspace for the tool. 
+11:10:58 INFO  : Platform repository initialization has completed.
+11:10:59 INFO  : Registering command handlers for Vitis TCF services
+11:11:06 INFO  : Successfully done query RDI_DATADIR 
+11:13:06 INFO  : Result from executing command 'getProjects': astar_HW;astar_hw_24
+11:13:06 INFO  : Result from executing command 'getPlatforms': astar_HW|C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/astar_HW.xpfm
+11:14:14 INFO  : Result from executing command 'getProjects': astar_HW;astar_hw_24
+11:14:14 INFO  : Result from executing command 'getPlatforms': astar_HW|C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/astar_HW.xpfm;astar_hw_24|C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_hw_24/export/astar_hw_24/astar_hw_24.xpfm
+11:18:18 INFO  : Checking for BSP changes to sync application flags for project 'astar_api_24'...
+11:18:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:18:46 INFO  : Jtag cable 'Digilent Arty Z7 003017B7E9A2A' is selected.
+11:18:46 INFO  : 'jtag frequency' command is executed.
+11:18:46 INFO  : Context for 'APU' is selected.
+11:18:46 INFO  : System reset is completed.
+11:18:49 INFO  : 'after 3000' command is executed.
+11:18:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}' command is executed.
+11:18:51 INFO  : Device configured successfully with "C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/_ide/bitstream/astar_design_wrapper.bit"
+11:18:52 INFO  : Context for 'APU' is selected.
+11:18:52 INFO  : Hardware design and registers information is loaded from 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_hw_24/export/astar_hw_24/hw/astar_design_wrapper.xsa'.
+11:18:52 INFO  : 'configparams force-mem-access 1' command is executed.
+11:18:52 INFO  : Context for 'APU' is selected.
+11:18:52 INFO  : Sourcing of 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/_ide/psinit/ps7_init.tcl' is done.
+11:18:52 INFO  : 'ps7_init' command is executed.
+11:18:52 INFO  : 'ps7_post_config' command is executed.
+11:18:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:18:53 INFO  : The application 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/Debug/astar_api_24.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:18:53 INFO  : 'configparams force-mem-access 0' command is executed.
+11:18:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}
+fpga -file C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/_ide/bitstream/astar_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_hw_24/export/astar_hw_24/hw/astar_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/Debug/astar_api_24.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:18:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:18:53 INFO  : 'con' command is executed.
+11:18:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:18:53 INFO  : Launch script is exported to file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api_24_system\_ide\scripts\systemdebugger_astar_api_24_system_standalone.tcl'
+11:22:47 INFO  : Checking for BSP changes to sync application flags for project 'astar_api_24'...
+11:22:58 INFO  : Checking for BSP changes to sync application flags for project 'astar_api_24'...
+11:23:17 INFO  : Disconnected from the channel tcfchan#3.
+11:23:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:23:18 INFO  : Jtag cable 'Digilent Arty Z7 003017B7E9A2A' is selected.
+11:23:18 INFO  : 'jtag frequency' command is executed.
+11:23:18 INFO  : Context for 'APU' is selected.
+11:23:18 INFO  : System reset is completed.
+11:23:21 INFO  : 'after 3000' command is executed.
+11:23:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}' command is executed.
+11:23:24 INFO  : Device configured successfully with "C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/_ide/bitstream/astar_design_wrapper.bit"
+11:23:24 INFO  : Context for 'APU' is selected.
+11:23:24 INFO  : Hardware design and registers information is loaded from 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_hw_24/export/astar_hw_24/hw/astar_design_wrapper.xsa'.
+11:23:24 INFO  : 'configparams force-mem-access 1' command is executed.
+11:23:24 INFO  : Context for 'APU' is selected.
+11:23:24 INFO  : Sourcing of 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/_ide/psinit/ps7_init.tcl' is done.
+11:23:24 INFO  : 'ps7_init' command is executed.
+11:23:24 INFO  : 'ps7_post_config' command is executed.
+11:23:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:23:25 INFO  : The application 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/Debug/astar_api_24.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:23:25 INFO  : 'configparams force-mem-access 0' command is executed.
+11:23:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}
+fpga -file C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/_ide/bitstream/astar_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_hw_24/export/astar_hw_24/hw/astar_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/Debug/astar_api_24.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:23:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:23:25 INFO  : 'con' command is executed.
+11:23:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:23:25 INFO  : Launch script is exported to file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api_24_system\_ide\scripts\debugger_astar_api_24-default.tcl'
+11:34:05 INFO  : Disconnected from the channel tcfchan#4.
+11:34:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:34:07 INFO  : Jtag cable 'Digilent Arty Z7 003017B7E9A2A' is selected.
+11:34:07 INFO  : 'jtag frequency' command is executed.
+11:34:07 INFO  : Context for 'APU' is selected.
+11:34:07 INFO  : System reset is completed.
+11:34:10 INFO  : 'after 3000' command is executed.
+11:34:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}' command is executed.
+11:34:12 INFO  : Device configured successfully with "C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit"
+11:34:12 INFO  : Context for 'APU' is selected.
+11:34:13 INFO  : Hardware design and registers information is loaded from 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa'.
+11:34:13 INFO  : 'configparams force-mem-access 1' command is executed.
+11:34:13 INFO  : Context for 'APU' is selected.
+11:34:13 INFO  : Sourcing of 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl' is done.
+11:34:13 INFO  : 'ps7_init' command is executed.
+11:34:13 INFO  : 'ps7_post_config' command is executed.
+11:34:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:34:13 INFO  : The application 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:34:13 INFO  : 'configparams force-mem-access 0' command is executed.
+11:34:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017B7E9A2A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017B7E9A2A-23727093-0"}
+fpga -file C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/hw/astar_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:34:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:34:14 INFO  : 'con' command is executed.
+11:34:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:34:14 INFO  : Launch script is exported to file 'C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_api_system\_ide\scripts\systemdebugger_astar_api_system_standalone.tcl'
+12:06:10 INFO  : Checking for BSP changes to sync application flags for project 'astar_api_24'...
+12:27:23 INFO  : Checking for BSP changes to sync application flags for project 'astar_api'...
+12:27:48 INFO  : Checking for BSP changes to sync application flags for project 'astar_api'...
+13:13:51 INFO  : Disconnected from the channel tcfchan#5.

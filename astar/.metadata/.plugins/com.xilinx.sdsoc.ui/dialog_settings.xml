@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="sdx.custom.platform.repository.locations" value="C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_HW\export\astar_HW"/>
-	<item key="sdx.custom.platform.repository.last.directory.dialog.location" value="C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_HW\export\astar_HW"/>
+	<item key="sdx.custom.platform.repository.locations" value="C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_HW\export\astar_HW;C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_hw_24\export\astar_hw_24"/>
+	<item key="sdx.custom.platform.repository.last.directory.dialog.location" value="C:\Users\dawid\SDUP\astar_pathfinder_co-processor_on_fpga\astar\astar_hw_24\export\astar_hw_24"/>
 </section>

@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:astar_stream:1.0
-// IP Revision: 54
+// IP Revision: 61
 
 (* X_CORE_INFO = "axis_fifo_v1_0,Vivado 2020.2" *)
 (* CHECK_LICENSE_TYPE = "astar_design_astar_stream_0_0,axis_fifo_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "astar_design_astar_stream_0_0,axis_fifo_v1_0,{x_ipProduct=Vivado 2020.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=astar_stream,x_ipVersion=1.0,x_ipCoreRevision=54,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,ADDR_WIDTH=8,C_AXIS_TDATA_WIDTH=32}" *)
+(* CORE_GENERATION_INFO = "astar_design_astar_stream_0_0,axis_fifo_v1_0,{x_ipProduct=Vivado 2020.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=astar_stream,x_ipVersion=1.0,x_ipCoreRevision=61,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,ADDR_WIDTH=8,C_AXIS_TDATA_WIDTH=32}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module astar_design_astar_stream_0_0 (
   s00_axis_aclk,

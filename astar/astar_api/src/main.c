@@ -82,9 +82,13 @@
  * ***************************************************************************
  */
 /***************************** Include Files *********************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "xaxidma.h"
 #include "xparameters.h"
 #include "xil_exception.h"
+#include "xil_printf.h"
 #include "xdebug.h"
 
 #ifdef __aarch64__
@@ -229,63 +233,32 @@ volatile int Error;
  */
 u32 *Packet = (u32 *) TX_BUFFER_BASE;
 
-//u16 maze[16] = {0b0000000000000000,
-//			    0b0000000000000000,
-//				0b1111111111111110,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//				0b0111111111111111,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//				0b1111111111111110,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//				0b0111111111111111,
-//				0b0100011100000000,
-//				0b0101000000000000,
-//				0b0101110000000000,
-//			    0b0001000000000000
-//			};
-u16 maze[16] = {0b0000000000000000,
-			    0b0000000000000000,
-				0b0111111111111110,
-				0b0100000000000010,
-				0b0100000000000010,
-				0b0100000000000010,
-				0b0100000000000010,
-				0b0100000000000010,
-				0b1111111011111110,
-				0b0000000000000000,
-				0b0000000000000000,
-				0b0111111111111111,
-				0b0100011100000000,
-				0b0101000000000000,
-				0b0101110000000000,
-			    0b0001000000000000
+u32 maze[20] = {0b00000000000100010000000000010000,
+			    0b00000000000100010000000000010000,
+				0b00000000000100010000000000010000,
+				0b00000000000100010000000000010000,
+				0b00000000000100010000000000010000,
+				0b00000000000100000000000000010000,
+				0b00000000000100000000000000000000,
+				0b00000000000100000000000000000000,
+				0b00000000000100000000000000000000,
+				0b00000000000100000000000000000000,
+				0b00000000000100000000000000000000,
+				0b00000000000100000000000000000000,
+				0b00000000000100000000000000000000,
+				0b00000000000100000000000000000000,
+				0b00000000000100000000000000000000,
+				0b00000000000100000000000000000000,
+				0b00000000000100010000000000001000,
+				0b00000000000100010000000000001000,
+				0b00000000000100010000000000001000,
+				0b00000000000100010000000000001000
 			};
 
-//u16 maze[16] = {0b0000000000000000,
-//			    0b0000000000000000,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//				0b0000000000000000,
-//			    0b0000000000000000
-//			};
-
-u16 open_list[16];
-u16 close_list[16];
-u16 path_list[16];
-u16 result1;
+u32 open_list[20];
+u32 close_list[20];
+u32 path_list[20];
+u32 result1;
 u32 start_x = 0;
 u32 start_y = 0;
 
@@ -320,152 +293,123 @@ char wiersz[ 18 ];
 int main(void)
 {
 	int Status;
+	XAxiDma_Config *Config;
+//	xil_printf("\r\n--- Entering main() --- \r\n");
+#ifdef __aarch64__
+	Xil_SetTlbAttributes(TX_BD_SPACE_BASE, MARK_UNCACHEABLE);
+	Xil_SetTlbAttributes(RX_BD_SPACE_BASE, MARK_UNCACHEABLE);
+#endif
 
-
-	for(int a = 0;a<2;a++){
-
-		XAxiDma_Config *Config;
-	//	start:
-		xil_printf("\r\n--- Entering main() --- \r\n");
-	#ifdef __aarch64__
-		Xil_SetTlbAttributes(TX_BD_SPACE_BASE, MARK_UNCACHEABLE);
-		Xil_SetTlbAttributes(RX_BD_SPACE_BASE, MARK_UNCACHEABLE);
-	#endif
-
-		Config = XAxiDma_LookupConfig(DMA_DEV_ID);
-		if (!Config) {
-			xil_printf("No config found for %d\r\n", DMA_DEV_ID);
-
-			return XST_FAILURE;
-		}
-		/* Initialize DMA engine */
-		XAxiDma_CfgInitialize(&AxiDma, Config);
-
-		if(!XAxiDma_HasSg(&AxiDma)) {
-			xil_printf("Device configured as Simple mode \r\n");
-			return XST_FAILURE;
-		}
-
-		/* Set up TX/RX channels to be ready to transmit and receive packets */
-		Status = TxSetup(&AxiDma);
-
-		if (Status != XST_SUCCESS) {
-
-			xil_printf("Failed TX setup\r\n");
-			return XST_FAILURE;
-		}
-
-		Status = RxSetup(&AxiDma);
-		if (Status != XST_SUCCESS) {
-
-			xil_printf("Failed RX setup\r\n");
-			return XST_FAILURE;
-		}
-
-		/* Set up Interrupt system  */
-		Status = SetupIntrSystem(&Intc, &AxiDma, TX_INTR_ID, RX_INTR_ID);
-		if (Status != XST_SUCCESS) {
-
-			xil_printf("Failed intr setup\r\n");
-			return XST_FAILURE;
-		}
-
-		/* Initialize flags before start transfer test  */
-		TxDone = 0;
-		RxDone = 0;
-		Error = 0;
-
-		start_x = 8;
-		start_y = 0;
-
-		stop_x = 8;
-		stop_y = 6;
-
-		/* Send a packet */
-		Status = SendPacket(&AxiDma);
-		if (Status != XST_SUCCESS) {
-
-			xil_printf("Failed send packet\r\n");
-			return XST_FAILURE;
-		}
-
-		/*
-		 * Wait TX done and RX done
-		 */
-		while (((TxDone < NUMBER_OF_BDS_TO_TRANSFER) ||
-				(RxDone < NUMBER_OF_BDS_TO_TRANSFER)) && !Error) {
-			/* NOP */
-		}
-
-		if (Error) {
-			xil_printf("Failed test transmit%s done, "
-				"receive%s done\r\n", TxDone? "":" not",
-						RxDone? "":" not");
-
-			goto Done;
-
-		}else {
-
-			/*
-			 * Test finished, check data
-			 */
-			Status = CheckData(MAX_PKT_LEN * NUMBER_OF_BDS_TO_TRANSFER,
-										0xC);
-			if (Status != XST_SUCCESS) {
-
-				xil_printf("Data check failed\r\n");
-
-				goto Done;
-			}
-
-			xil_printf("Successfully ran AXI DMA SG interrupt Example\r\n");
-		}
+	Config = XAxiDma_LookupConfig(DMA_DEV_ID);
+	if (!Config) {
+		xil_printf("No config found for %d\r\n", DMA_DEV_ID);
+		return XST_FAILURE;
 	}
-//	goto start;
+
+	/* Initialize DMA engine */
+	XAxiDma_CfgInitialize(&AxiDma, Config);
+	if(!XAxiDma_HasSg(&AxiDma)) {
+		xil_printf("Device configured as Simple mode \r\n");
+		return XST_FAILURE;
+	}
+
+	/* Set up TX/RX channels to be ready to transmit and receive packets */
+	Status = TxSetup(&AxiDma);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Failed TX setup\r\n");
+		return XST_FAILURE;
+	}
+
+	Status = RxSetup(&AxiDma);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Failed RX setup\r\n");
+		return XST_FAILURE;
+	}
+
+	/* Set up Interrupt system  */
+	Status = SetupIntrSystem(&Intc, &AxiDma, TX_INTR_ID, RX_INTR_ID);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Failed intr setup\r\n");
+		return XST_FAILURE;
+	}
+
+	/* Initialize flags before start transfer test  */
 	TxDone = 0;
 	RxDone = 0;
 	Error = 0;
+
+	start_x = 19;
+	start_y = 0;
+
+	stop_x = 0;
+	stop_y = 19;
+	for (int i = 0;i<20;i++){
+		scanf("%ld\n\r",&maze[i]);
+	}
+	scanf("%ld\n\r",&start_x);
+	scanf("%ld\n\r",&start_y);
+	scanf("%ld\n\r",&stop_x);
+	scanf("%ld\n\r",&stop_y);
+
 	/* Send a packet */
-		Status = SendPacket(&AxiDma);
-		if (Status != XST_SUCCESS) {
+	Status = SendPacket(&AxiDma);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Failed send packet\r\n");
+		return XST_FAILURE;
+	}
 
-			xil_printf("Failed send packet\r\n");
-			return XST_FAILURE;
-		}
-
-		/*
-		 * Wait TX done and RX done
-		 */
-		xil_printf("Wait for done signal\r\n");
-		while (((TxDone < NUMBER_OF_BDS_TO_TRANSFER) ||
-				(RxDone < NUMBER_OF_BDS_TO_TRANSFER)) && !Error) {
+	/*
+	 * Wait TX done and RX done
+	 */
+	while (((TxDone < NUMBER_OF_BDS_TO_TRANSFER) ||
+			(RxDone < NUMBER_OF_BDS_TO_TRANSFER)) && !Error) {
 			/* NOP */
-		}
+	}
+	if (Error) {
+		xil_printf("Failed test transmit%s done, "
+		    		"receive%s done\r\n", TxDone? "":" not",RxDone? "":" not");
+		goto Done;
 
-		if (Error) {
-			xil_printf("Failed test transmit%s done, "
-				"receive%s done\r\n", TxDone? "":" not",
-						RxDone? "":" not");
-
-			goto Done;
-
-		}else {
-
-			/*
-			 * Test finished, check data
-			 */
-			Status = CheckData(MAX_PKT_LEN * NUMBER_OF_BDS_TO_TRANSFER,
-										0xC);
+	}else {
+		/*
+		 * Test finished, check data
+		 */
+		Status = CheckData(MAX_PKT_LEN * NUMBER_OF_BDS_TO_TRANSFER,0xC);
 			if (Status != XST_SUCCESS) {
-
 				xil_printf("Data check failed\r\n");
+		    	goto Done;
+		  	}
 
-				goto Done;
+//		    xil_printf("Successfully ran AXI DMA SG interrupt Example\r\n");
+	}
+	while(1){
+		fgets( wiersz, 3, stdin );
+		if (wiersz[0] == 'm') {
+			for (int i = 0;i<20;i++){
+				printf("%ld\n\r",maze[i]);
+		    }
+		} else if (wiersz[0] == 'o') {
+			for (int i = 0;i<20;i++){
+				printf("%ld\n\r",open_list[i]);
 			}
-
-			xil_printf("Successfully ran AXI DMA SG interrupt Example\r\n");
+		} else if (wiersz[0] == 'c') {
+			for (int i = 0;i<20;i++){
+				printf("%ld\n\r",close_list[i]);
+		    }
+		} else if (wiersz[0] == 'p') {
+			for (int i = 0;i<20;i++){
+				printf("%ld\n\r",path_list[i]);
+		    }
+		} else if (wiersz[0] == 's') {
+			printf("%ld\n\r",start_x);
+			printf("%ld\n\r",start_y);
+		} else if (wiersz[0] == 'e') {
+			printf("%ld\n\r",stop_x);
+			printf("%ld\n\r",stop_y);
+		} else {
+			printf( "Wczytany tekst: %s\n", wiersz );
 		}
-	/* Disable TX and RX Ring interrupts and return success */
+	}
 
 	DisableIntrSystem(&Intc, TX_INTR_ID, RX_INTR_ID);
 
@@ -491,6 +435,24 @@ void printBits(size_t const size, void const * const ptr, void const * const ptr
     unsigned char byte2;
     unsigned char byte3;
     int j;
+
+    for (j = 7; j >= 0; j--) {
+        byte = (b[2] >> j) & 1;
+        byte1 = (b1[2] >> j) & 1;
+        byte2 = (b2[2] >> j) & 1;
+        byte3 = (b3[2] >> j) & 1;
+        if (byte == 1) {
+        	printf("@");
+        } else if (byte1 == 1) {
+        	printf("!");
+        } else if (byte2 == 1) {
+        	printf("+");
+        } else if (byte3 == 1) {
+        	printf("-");
+        } else {
+        	printf(".");
+        }
+    }
 
     for (j = 7; j >= 0; j--) {
         byte = (b[1] >> j) & 1;
@@ -562,27 +524,11 @@ static int CheckData(int Length, u8 StartValue)
 #ifndef __aarch64__
 	Xil_DCacheInvalidateRange((UINTPTR)RxPacket, Length);
 #endif
-
-
-
-	for(Index = 0; Index < Length; Index++) {
-		xil_printf("Data git %d: %x/%x\r\n",
-					    Index, RxPacket[Index], Value);
-//		if (RxPacket[Index] != Value) {
-//			xil_printf("Data error %d: %x/%x\r\n",
-//			    Index, RxPacket[Index], Value);
-//
-//			return XST_FAILURE;
-//		}
-//		Value = 0xCC00FFEE;
-//		Value = (Value + 10000000000) & 0xFFFFFFFF;
-		Value = (Value + 1) & 0xFFFFFFFF;
-	}
-    for (int i = 0;i<16;i++){
-        path_list[i] = RxPacket[38+i];
-        close_list[i] = RxPacket[38+16+i];
-        open_list[i] = (u16)RxPacket[70+i];
-        printBits(sizeof(result1), &path_list[i],&close_list[i],&open_list[i],&maze[i]);
+    for (int i = 0;i<20;i++){
+        path_list[i] = RxPacket[46+i];
+        close_list[i] = RxPacket[46+20+i];
+        open_list[i] = RxPacket[86+i];
+//        printBits(sizeof(result1), &path_list[i],&close_list[i],&open_list[i],&maze[i]);
     }
 	return XST_SUCCESS;
 }
@@ -1252,13 +1198,13 @@ static int SendPacket(XAxiDma * AxiDmaInstPtr)
     TxPacket[1] = stop_node;
     TxPacket[2] = 0x1;
 
-    for (int i = 0;i<16;i++){
+    for (int i = 0;i<20;i++){
     	TxPacket[3+i] = maze[i];
     }
 
 	Value = 0xC;
 
-	for(Index = 20; Index < MAX_PKT_LEN * NUMBER_OF_BDS_TO_TRANSFER;
+	for(Index = 24; Index < MAX_PKT_LEN * NUMBER_OF_BDS_TO_TRANSFER;
 								Index ++) {
 		TxPacket[Index] = Value;
 //		Value = 0xCC00FFEE;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="astar_design_astar_stream_0_0_synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1687262823">
+<GenRun Id="astar_design_astar_stream_0_0_synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1687346182">
   <File Type="PA-TCL" Name="astar_design_astar_stream_0_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="astar_design_astar_stream_0_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="astar_design_astar_stream_0_0_reports.tcl"/>

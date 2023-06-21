@@ -16,3 +16,6 @@ platform write
 platform generate -domains 
 platform active {astar_HW}
 platform generate
+platform active {astar_HW}
+platform config -updatehw {C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_design_wrapper.xsa}
+platform generate -domains 

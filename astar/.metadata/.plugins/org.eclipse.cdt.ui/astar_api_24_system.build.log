@@ -1,0 +1,10 @@
+11:18:20 **** Build of configuration Debug for project astar_api_24_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 61691 C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_hw_24/export/astar_hw_24/astar_hw_24.xpfm standalone_domain C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24_system/Debug/system.bif
+sdcard_gen --xpfm C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_hw_24/export/astar_hw_24/astar_hw_24.xpfm --sys_config astar_hw_24 --bif C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24_system/Debug/system.bif --bitstream C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/_ide/bitstream/astar_design_wrapper.bit --elf C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/Debug/astar_api_24.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24/_ide/bitstream/astar_design_wrapper.bit
+Running C:/Xilinx/Vitis/2020.2/bin/bootgen  -image C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+11:18:35 Build Finished (took 14s.766ms)
+

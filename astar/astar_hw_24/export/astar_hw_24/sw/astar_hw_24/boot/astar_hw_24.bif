@@ -1,0 +1,7 @@
+/*astar_hw_24*/
+the_ROM_image:
+{
+  [bootloader]<astar_hw_24/boot/fsbl.elf>
+   <bitstream> 
+  <elf,ps7_cortexa9_0>
+}

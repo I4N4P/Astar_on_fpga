@@ -1,10 +1,10 @@
-14:56:44 **** Build of configuration Debug for project astar_api_system ****
+16:03:06 **** Incremental Build of configuration Debug for project astar_api_system ****
 make all 
 Generating bif file for the system project
-generate_system_bif.bat 50127 C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/astar_HW.xpfm standalone_domain C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_system/Debug/system.bif
+generate_system_bif.bat 52865 C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/astar_HW.xpfm standalone_domain C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_system/Debug/system.bif
 sdcard_gen --xpfm C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_HW/export/astar_HW/astar_HW.xpfm --sys_config astar_HW --bif C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_system/Debug/system.bif --bitstream C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit --elf C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/Debug/astar_api.elf,ps7_cortexa9_0
 creating BOOT.BIN using C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api/_ide/bitstream/astar_design_wrapper.bit
 Running C:/Xilinx/Vitis/2020.2/bin/bootgen  -image C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
 
-14:57:34 Build Finished (took 49s.589ms)
+16:03:24 Build Finished (took 18s.262ms)
 

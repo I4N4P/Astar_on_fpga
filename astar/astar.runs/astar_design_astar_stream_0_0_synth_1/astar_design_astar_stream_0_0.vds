@@ -2,19 +2,17 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue Jun 20 14:17:59 2023
-# Process ID: 6952
+# Start of session at: Wed Jun 21 13:16:40 2023
+# Process ID: 22772
 # Current directory: C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.runs/astar_design_astar_stream_0_0_synth_1
 # Command line: vivado.exe -log astar_design_astar_stream_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source astar_design_astar_stream_0_0.tcl
 # Log file: C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.runs/astar_design_astar_stream_0_0_synth_1/astar_design_astar_stream_0_0.vds
 # Journal file: C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.runs/astar_design_astar_stream_0_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source astar_design_astar_stream_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 1011.305 ; gain = 0.000
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
-update_ip_catalog: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1011.305 ; gain = 0.000
 Command: synth_design -top astar_design_astar_stream_0_0 -part xc7z020clg400-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
@@ -22,16 +20,16 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 9256
+INFO: [Synth 8-7075] Helper process launched with PID 8224
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 1011.305 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1012.344 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'astar_design_astar_stream_0_0' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ip/astar_design_astar_stream_0_0/synth/astar_design_astar_stream_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'axis_fifo_v1_0' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/hdl/astar_stream_v1_0.v:43]
+INFO: [Synth 8-6157] synthesizing module 'axis_fifo_v1_0' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/hdl/astar_stream_v1_0.v:12]
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter C_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
-	Parameter W bound to: 16 - type: integer 
-	Parameter H bound to: 16 - type: integer 
+	Parameter W bound to: 20 - type: integer 
+	Parameter H bound to: 20 - type: integer 
 	Parameter IDLE bound to: 4'b0000 
 	Parameter WAIT_0 bound to: 4'b0001 
 	Parameter WRITE_O bound to: 4'b0010 
@@ -42,9 +40,9 @@ INFO: [Synth 8-6157] synthesizing module 'axis_fifo_v1_0' [c:/Users/dawid/SDUP/a
 	Parameter READ_C bound to: 4'b0111 
 	Parameter READ_M bound to: 4'b1000 
 	Parameter WAIT_1 bound to: 4'b1001 
-INFO: [Synth 8-6157] synthesizing module 'astar_rtl' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/astar_rtl.sv:22]
-	Parameter W bound to: 16 - type: integer 
-	Parameter H bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'astar_rtl' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/astar_rtl.sv:12]
+	Parameter W bound to: 20 - type: integer 
+	Parameter H bound to: 20 - type: integer 
 	Parameter param_x bound to: 256'b1111111111111111111111111111111100000000000000000000000000000000000000000000000000000000000000011111111111111111111111111111111100000000000000000000000000000001111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000001 
 	Parameter param_y bound to: 256'b1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
 	Parameter param_g bound to: 256'b0000000000000000000000000000111000000000000000000000000000001010000000000000000000000000000011100000000000000000000000000000101000000000000000000000000000001010000000000000000000000000000011100000000000000000000000000000101000000000000000000000000000001110 
@@ -57,97 +55,97 @@ INFO: [Synth 8-6157] synthesizing module 'astar_rtl' [c:/Users/dawid/SDUP/astar_
 	Parameter S7 bound to: 4'b0111 
 	Parameter S8 bound to: 4'b1000 
 	Parameter S9 bound to: 4'b1001 
-INFO: [Synth 8-6157] synthesizing module 'calc_children' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'calc_children' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
 	Parameter param_x bound to: -1 - type: integer 
 	Parameter param_y bound to: -1 - type: integer 
 	Parameter param_g bound to: 14 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'calc_children' (1#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'maze_children' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/maze_children.v:23]
-	Parameter W bound to: 16 - type: integer 
-	Parameter H bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'maze_children' (2#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/maze_children.v:23]
-INFO: [Synth 8-6157] synthesizing module 'validate_child' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/validate_child.sv:23]
-INFO: [Synth 8-6155] done synthesizing module 'validate_child' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/validate_child.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'calc_children__parameterized0' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'calc_children' (1#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'maze_children' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/maze_children.v:13]
+	Parameter W bound to: 20 - type: integer 
+	Parameter H bound to: 20 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'maze_children' (2#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/maze_children.v:13]
+INFO: [Synth 8-6157] synthesizing module 'validate_child' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/validate_child.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'validate_child' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/validate_child.sv:13]
+INFO: [Synth 8-6157] synthesizing module 'calc_children__parameterized0' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
 	Parameter param_x bound to: 0 - type: integer 
 	Parameter param_y bound to: -1 - type: integer 
 	Parameter param_g bound to: 10 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'calc_children__parameterized0' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'calc_children__parameterized1' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'calc_children__parameterized0' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'calc_children__parameterized1' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
 	Parameter param_x bound to: 1 - type: integer 
 	Parameter param_y bound to: -1 - type: integer 
 	Parameter param_g bound to: 14 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'calc_children__parameterized1' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'calc_children__parameterized2' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'calc_children__parameterized1' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'calc_children__parameterized2' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
 	Parameter param_x bound to: -1 - type: integer 
 	Parameter param_y bound to: 0 - type: integer 
 	Parameter param_g bound to: 10 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'calc_children__parameterized2' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'calc_children__parameterized3' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'calc_children__parameterized2' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'calc_children__parameterized3' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
 	Parameter param_x bound to: 1 - type: integer 
 	Parameter param_y bound to: 0 - type: integer 
 	Parameter param_g bound to: 10 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'calc_children__parameterized3' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'calc_children__parameterized4' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'calc_children__parameterized3' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'calc_children__parameterized4' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
 	Parameter param_x bound to: -1 - type: integer 
 	Parameter param_y bound to: 1 - type: integer 
 	Parameter param_g bound to: 14 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'calc_children__parameterized4' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'calc_children__parameterized5' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'calc_children__parameterized4' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'calc_children__parameterized5' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
 	Parameter param_x bound to: 0 - type: integer 
 	Parameter param_y bound to: 1 - type: integer 
 	Parameter param_g bound to: 10 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'calc_children__parameterized5' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'calc_children__parameterized6' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'calc_children__parameterized5' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'calc_children__parameterized6' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
 	Parameter param_x bound to: 1 - type: integer 
 	Parameter param_y bound to: 1 - type: integer 
 	Parameter param_g bound to: 14 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'calc_children__parameterized6' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/calc_children.sv:23]
-INFO: [Synth 8-6155] done synthesizing module 'astar_rtl' (4#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/src/astar_rtl.sv:22]
-INFO: [Synth 8-6155] done synthesizing module 'axis_fifo_v1_0' (5#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/8daf/hdl/astar_stream_v1_0.v:43]
+INFO: [Synth 8-6155] done synthesizing module 'calc_children__parameterized6' (3#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'astar_rtl' (4#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/astar_rtl.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'axis_fifo_v1_0' (5#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/hdl/astar_stream_v1_0.v:12]
 INFO: [Synth 8-6155] done synthesizing module 'astar_design_astar_stream_0_0' (6#1) [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ip/astar_design_astar_stream_0_0/synth/astar_design_astar_stream_0_0.v:57]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:56 ; elapsed = 00:01:08 . Memory (MB): peak = 1258.594 ; gain = 247.289
+Finished RTL Elaboration : Time (s): cpu = 00:00:43 ; elapsed = 00:00:52 . Memory (MB): peak = 1407.125 ; gain = 394.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:03 ; elapsed = 00:01:18 . Memory (MB): peak = 1258.594 ; gain = 247.289
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:01:01 . Memory (MB): peak = 1407.125 ; gain = 394.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:03 ; elapsed = 00:01:18 . Memory (MB): peak = 1258.594 ; gain = 247.289
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:50 ; elapsed = 00:01:01 . Memory (MB): peak = 1407.125 ; gain = 394.781
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1258.594 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1407.125 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1333.176 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1457.977 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1357.340 ; gain = 24.164
+Constraint Validation Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1495.461 ; gain = 37.484
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:44 ; elapsed = 00:02:04 . Memory (MB): peak = 1357.340 ; gain = 346.035
+Finished Constraint Validation : Time (s): cpu = 00:01:23 ; elapsed = 00:01:35 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:44 ; elapsed = 00:02:04 . Memory (MB): peak = 1357.340 ; gain = 346.035
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:23 ; elapsed = 00:01:35 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:44 ; elapsed = 00:02:04 . Memory (MB): peak = 1357.340 ; gain = 346.035
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:23 ; elapsed = 00:01:35 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:09 ; elapsed = 00:02:35 . Memory (MB): peak = 1357.340 ; gain = 346.035
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:02 ; elapsed = 00:02:42 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -171,17 +169,18 @@ Detailed RTL Component Info :
 	               33 Bit    Registers := 2     
 	               32 Bit    Registers := 1     
 	               24 Bit    Registers := 2     
-	               16 Bit    Registers := 1     
+	               20 Bit    Registers := 1     
 	               13 Bit    Registers := 2     
-	               12 Bit    Registers := 1069  
+	               12 Bit    Registers := 1645  
 	                9 Bit    Registers := 8     
 	                8 Bit    Registers := 2     
-	                4 Bit    Registers := 4     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 30    
 +---RAMs : 
 	               8K Bit	(256 X 34 bit)          RAMs := 1     
-	              256 Bit	(16 X 16 bit)          RAMs := 4     
+	              400 Bit	(20 X 20 bit)          RAMs := 4     
 	               96 Bit	(8 X 12 bit)          RAMs := 1     
 +---Muxes : 
 	   6 Input   34 Bit        Muxes := 1     
@@ -189,12 +188,12 @@ Detailed RTL Component Info :
 	   2 Input   32 Bit        Muxes := 12    
 	  10 Input   32 Bit        Muxes := 8     
 	  11 Input   24 Bit        Muxes := 2     
-	   2 Input   16 Bit        Muxes := 3     
-	  10 Input   16 Bit        Muxes := 3     
+	   2 Input   20 Bit        Muxes := 3     
+	  10 Input   20 Bit        Muxes := 3     
 	  11 Input   13 Bit        Muxes := 2     
 	   2 Input   12 Bit        Muxes := 42    
-	  10 Input   12 Bit        Muxes := 7     
 	   8 Input   12 Bit        Muxes := 1     
+	  10 Input   12 Bit        Muxes := 7     
 	  11 Input   12 Bit        Muxes := 1     
 	   2 Input    9 Bit        Muxes := 13    
 	   2 Input    8 Bit        Muxes := 1     
@@ -203,11 +202,11 @@ Detailed RTL Component Info :
 	   3 Input    3 Bit        Muxes := 2     
 	   2 Input    3 Bit        Muxes := 4     
 	  11 Input    3 Bit        Muxes := 1     
-	   3 Input    2 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 2     
+	   3 Input    2 Bit        Muxes := 1     
 	  11 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 407   
-	  10 Input    1 Bit        Muxes := 269   
+	   2 Input    1 Bit        Muxes := 633   
+	  10 Input    1 Bit        Muxes := 413   
 	  11 Input    1 Bit        Muxes := 14    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -224,8 +223,137 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'genblk1[1].calc_children_m/children_y_reg[11:0]' into 'genblk1[0].calc_children_m/children_y_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:30]
+INFO: [Synth 8-4471] merging register 'genblk1[2].calc_children_m/children_y_reg[11:0]' into 'genblk1[0].calc_children_m/children_y_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:30]
+INFO: [Synth 8-4471] merging register 'genblk1[2].calc_children_m/children_g_reg[11:0]' into 'genblk1[0].calc_children_m/children_g_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:31]
+INFO: [Synth 8-4471] merging register 'genblk1[3].calc_children_m/children_x_reg[11:0]' into 'genblk1[0].calc_children_m/children_x_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:29]
+INFO: [Synth 8-4471] merging register 'genblk1[3].calc_children_m/children_g_reg[11:0]' into 'genblk1[1].calc_children_m/children_g_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:31]
+INFO: [Synth 8-4471] merging register 'genblk1[4].calc_children_m/children_x_reg[11:0]' into 'genblk1[2].calc_children_m/children_x_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:29]
+INFO: [Synth 8-4471] merging register 'genblk1[4].calc_children_m/children_y_reg[11:0]' into 'genblk1[3].calc_children_m/children_y_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:30]
+INFO: [Synth 8-4471] merging register 'genblk1[4].calc_children_m/children_g_reg[11:0]' into 'genblk1[1].calc_children_m/children_g_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:31]
+INFO: [Synth 8-4471] merging register 'genblk1[5].calc_children_m/children_x_reg[11:0]' into 'genblk1[0].calc_children_m/children_x_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:29]
+INFO: [Synth 8-4471] merging register 'genblk1[5].calc_children_m/children_g_reg[11:0]' into 'genblk1[0].calc_children_m/children_g_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:31]
+INFO: [Synth 8-4471] merging register 'genblk1[6].calc_children_m/children_x_reg[11:0]' into 'genblk1[1].calc_children_m/children_x_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:29]
+INFO: [Synth 8-4471] merging register 'genblk1[6].calc_children_m/children_y_reg[11:0]' into 'genblk1[5].calc_children_m/children_y_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:30]
+INFO: [Synth 8-4471] merging register 'genblk1[6].calc_children_m/children_g_reg[11:0]' into 'genblk1[1].calc_children_m/children_g_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:31]
+INFO: [Synth 8-4471] merging register 'genblk1[7].calc_children_m/children_x_reg[11:0]' into 'genblk1[2].calc_children_m/children_x_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:29]
+INFO: [Synth 8-4471] merging register 'genblk1[7].calc_children_m/children_y_reg[11:0]' into 'genblk1[5].calc_children_m/children_y_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:30]
+INFO: [Synth 8-4471] merging register 'genblk1[7].calc_children_m/children_g_reg[11:0]' into 'genblk1[0].calc_children_m/children_g_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:31]
+INFO: [Synth 8-4471] merging register 'genblk1[4].calc_children_m/diff_y_reg[11:0]' into 'genblk1[3].calc_children_m/diff_y_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:33]
+INFO: [Synth 8-4471] merging register 'genblk1[6].calc_children_m/diff_x_reg[11:0]' into 'genblk1[1].calc_children_m/diff_x_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:32]
+INFO: [Synth 8-4471] merging register 'genblk1[1].calc_children_m/diff_y_reg[11:0]' into 'genblk1[0].calc_children_m/diff_y_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:33]
+INFO: [Synth 8-4471] merging register 'genblk1[2].calc_children_m/diff_y_reg[11:0]' into 'genblk1[0].calc_children_m/diff_y_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:33]
+INFO: [Synth 8-4471] merging register 'genblk1[3].calc_children_m/diff_x_reg[11:0]' into 'genblk1[0].calc_children_m/diff_x_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:32]
+INFO: [Synth 8-4471] merging register 'genblk1[4].calc_children_m/diff_x_reg[11:0]' into 'genblk1[2].calc_children_m/diff_x_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:32]
+INFO: [Synth 8-4471] merging register 'genblk1[5].calc_children_m/diff_x_reg[11:0]' into 'genblk1[0].calc_children_m/diff_x_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:32]
+INFO: [Synth 8-4471] merging register 'genblk1[6].calc_children_m/diff_y_reg[11:0]' into 'genblk1[5].calc_children_m/diff_y_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:33]
+INFO: [Synth 8-4471] merging register 'genblk1[7].calc_children_m/diff_x_reg[11:0]' into 'genblk1[2].calc_children_m/diff_x_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:32]
+INFO: [Synth 8-4471] merging register 'genblk1[7].calc_children_m/diff_y_reg[11:0]' into 'genblk1[5].calc_children_m/diff_y_reg[11:0]' [c:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.gen/sources_1/bd/astar_design/ipshared/1bc4/src/calc_children.sv:33]
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[0]' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[0]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[1]' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[1]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[2]' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[2]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[3]' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[3]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[4]' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[4]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[0]' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[0]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[1]' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[1]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[2]' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[2]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[3]' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[3]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[4]' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[4]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[0]' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[0]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[1]' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[1]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[2]' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[2]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[3]' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[3]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[4]' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[4]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[0]__0' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[0]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[1]__0' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[1]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[2]__0' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[2]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[3]__0' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[3]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[4]__0' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[4]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[0]__0' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[0]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[1]__0' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[1]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[2]__0' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[2]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[3]__0' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[3]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[4]__0' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[4]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[0]__1' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[0]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[1]__1' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[1]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[2]__1' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[2]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[3]__1' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[3]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[4]__1' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[4]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[0]__0' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[0]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[1]__0' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[1]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[2]__0' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[2]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[3]__0' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[3]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[4]__0' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[4]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[0]__1' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[0]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[1]__1' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[1]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[2]__1' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[2]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[3]__1' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[3]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[4]__1' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[4]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[0]__4' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[0]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[1]__4' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[1]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[2]__4' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[2]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[3]__4' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[3]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[4]__4' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[4]__5'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[0]__5' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[0]__3'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[1]__5' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[1]__3'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[2]__5' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[2]__3'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[3]__5' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[3]__3'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[4]__5' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[4]__3'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[0]__2' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[0]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[1]__2' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[1]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[2]__2' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[2]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[3]__2' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[3]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[4]__2' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[4]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[0]__3' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[0]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[1]__3' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[1]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[2]__3' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[2]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[3]__3' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[3]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[1].calc_children_m/children_x_reg_rep[4]__3' (FDR) to 'genblk1[1].calc_children_m/children_x_reg_rep[4]__4'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[0]__4' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[0]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[1]__4' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[1]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[2]__4' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[2]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[3]__4' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[3]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[4]__4' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[4]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[0]__5' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[0]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[1]__5' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[1]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[2]__5' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[2]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[3]__5' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[3]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[4]__5' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[4]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[0]__3' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[0]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[1]__3' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[1]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[2]__3' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[2]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[3]__3' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[3]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[4]__3' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[4]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[0]__6' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[0]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[1]__6' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[1]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[2]__6' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[2]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[3]__6' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[3]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[4]__6' (FDR) to 'genblk1[2].calc_children_m/children_x_reg_rep[4]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[0]__3' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[0]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[1]__3' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[1]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[2]__3' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[2]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[3]__3' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[3]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[4]__3' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[4]__6'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[0]__6' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[0]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[1]__6' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[1]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[2]__6' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[2]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[3]__6' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[3]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[0].calc_children_m/children_x_reg_rep[4]__6' (FDR) to 'genblk1[0].calc_children_m/children_x_reg_rep[4]__2'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[0]__2' (FDR) to 'genblk1[2].calc_children_m/children_x_reg[0]'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[1]__2' (FDR) to 'genblk1[2].calc_children_m/children_x_reg[1]'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[2]__2' (FDR) to 'genblk1[2].calc_children_m/children_x_reg[2]'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[3]__2' (FDR) to 'genblk1[2].calc_children_m/children_x_reg[3]'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[4]__2' (FDR) to 'genblk1[2].calc_children_m/children_x_reg[4]'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[0]__7' (FDR) to 'genblk1[2].calc_children_m/children_x_reg[0]'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[1]__7' (FDR) to 'genblk1[2].calc_children_m/children_x_reg[1]'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[2]__7' (FDR) to 'genblk1[2].calc_children_m/children_x_reg[2]'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[3]__7' (FDR) to 'genblk1[2].calc_children_m/children_x_reg[3]'
+INFO: [Synth 8-3886] merging instance 'genblk1[2].calc_children_m/children_x_reg_rep[4]__7' (FDR) to 'genblk1[2].calc_children_m/children_x_reg[4]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\state_reg[7] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:32 ; elapsed = 00:04:03 . Memory (MB): peak = 1375.648 ; gain = 364.344
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:58 ; elapsed = 00:04:44 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -235,11 +363,11 @@ Distributed RAM: Preliminary Mapping	Report (see note below)
 +------------------------------+----------------+-----------+----------------------+-----------------------------+
 |Module Name                   | RTL Object     | Inference | Size (Depth x Width) | Primitives                  | 
 +------------------------------+----------------+-----------+----------------------+-----------------------------+
-|astar_design_astar_stream_0_0 | close_list_reg | Implied   | 16 x 16              | RAM32M x 30	                | 
-|astar_design_astar_stream_0_0 | path_reg       | Implied   | 16 x 16              | RAM32M x 6	                 | 
-|astar_design_astar_stream_0_0 | open_list_reg  | Implied   | 16 x 16              | RAM32M x 36	                | 
-|astar_design_astar_stream_0_0 | maze_reg       | Implied   | 16 x 16              | RAM32M x 24	                | 
-|astar_design_astar_stream_0_0 | children_h_reg | Implied   | 8 x 12               | RAM32M x 2	                 | 
+|astar_rtl__GB0                | maze_reg       | Implied   | 32 x 20              | RAM32M x 32	                | 
+|astar_rtl__GB0                | open_list_reg  | Implied   | 32 x 20              | RAM32M x 48	                | 
+|astar_rtl__GB0                | path_reg       | Implied   | 32 x 20              | RAM32M x 8	                 | 
+|astar_rtl__GB0                | close_list_reg | Implied   | 32 x 20              | RAM32M x 40	                | 
+|astar_rtl__GB0                | children_h_reg | Implied   | 8 x 12               | RAM32M x 2	                 | 
 |astar_design_astar_stream_0_0 | mem_reg        | Implied   | 256 x 34             | RAM64X1D x 12	RAM64M x 132	 | 
 +------------------------------+----------------+-----------+----------------------+-----------------------------+
 
@@ -251,13 +379,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:44 ; elapsed = 00:04:15 . Memory (MB): peak = 1375.648 ; gain = 364.344
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:13 ; elapsed = 00:05:01 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:44 ; elapsed = 00:04:15 . Memory (MB): peak = 1375.648 ; gain = 364.344
+Finished Timing Optimization : Time (s): cpu = 00:03:18 ; elapsed = 00:05:08 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -267,11 +395,11 @@ Distributed RAM: Final Mapping	Report
 +------------------------------+----------------+-----------+----------------------+-----------------------------+
 |Module Name                   | RTL Object     | Inference | Size (Depth x Width) | Primitives                  | 
 +------------------------------+----------------+-----------+----------------------+-----------------------------+
-|astar_design_astar_stream_0_0 | close_list_reg | Implied   | 16 x 16              | RAM32M x 30	                | 
-|astar_design_astar_stream_0_0 | path_reg       | Implied   | 16 x 16              | RAM32M x 6	                 | 
-|astar_design_astar_stream_0_0 | open_list_reg  | Implied   | 16 x 16              | RAM32M x 36	                | 
-|astar_design_astar_stream_0_0 | maze_reg       | Implied   | 16 x 16              | RAM32M x 24	                | 
-|astar_design_astar_stream_0_0 | children_h_reg | Implied   | 8 x 12               | RAM32M x 2	                 | 
+|astar_rtl__GB0                | maze_reg       | Implied   | 32 x 20              | RAM32M x 32	                | 
+|astar_rtl__GB0                | open_list_reg  | Implied   | 32 x 20              | RAM32M x 48	                | 
+|astar_rtl__GB0                | path_reg       | Implied   | 32 x 20              | RAM32M x 8	                 | 
+|astar_rtl__GB0                | close_list_reg | Implied   | 32 x 20              | RAM32M x 40	                | 
+|astar_rtl__GB0                | children_h_reg | Implied   | 8 x 12               | RAM32M x 2	                 | 
 |astar_design_astar_stream_0_0 | mem_reg        | Implied   | 256 x 34             | RAM64X1D x 12	RAM64M x 132	 | 
 +------------------------------+----------------+-----------+----------------------+-----------------------------+
 
@@ -282,7 +410,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:52 ; elapsed = 00:04:24 . Memory (MB): peak = 1375.648 ; gain = 364.344
+Finished Technology Mapping : Time (s): cpu = 00:03:27 ; elapsed = 00:05:45 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -300,37 +428,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:02 ; elapsed = 00:04:34 . Memory (MB): peak = 1375.648 ; gain = 364.344
+Finished IO Insertion : Time (s): cpu = 00:03:42 ; elapsed = 00:06:02 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:02 ; elapsed = 00:04:35 . Memory (MB): peak = 1375.648 ; gain = 364.344
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:42 ; elapsed = 00:06:03 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:04 ; elapsed = 00:04:37 . Memory (MB): peak = 1375.648 ; gain = 364.344
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:45 ; elapsed = 00:06:06 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:04 ; elapsed = 00:04:37 . Memory (MB): peak = 1375.648 ; gain = 364.344
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:46 ; elapsed = 00:06:06 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:05 ; elapsed = 00:04:38 . Memory (MB): peak = 1375.648 ; gain = 364.344
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:47 ; elapsed = 00:06:08 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:05 ; elapsed = 00:04:38 . Memory (MB): peak = 1375.648 ; gain = 364.344
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:48 ; elapsed = 00:06:09 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -346,48 +474,50 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |CARRY4 |   168|
-|2     |LUT1   |   116|
-|3     |LUT2   |   650|
-|4     |LUT3   |   269|
-|5     |LUT4   |   425|
-|6     |LUT5   |   393|
-|7     |LUT6   |  6978|
-|8     |MUXF7  |  2771|
-|9     |MUXF8  |  1320|
-|10    |RAM32M |    53|
+|1     |CARRY4 |   184|
+|2     |LUT1   |   105|
+|3     |LUT2   |   709|
+|4     |LUT3   |   583|
+|5     |LUT4   |   318|
+|6     |LUT5   |  2109|
+|7     |LUT6   |  9935|
+|8     |MUXF7  |  3518|
+|9     |MUXF8  |   477|
+|10    |RAM32M |    70|
 |11    |RAM64M |   132|
-|12    |FDRE   | 13073|
+|12    |FDRE   | 20017|
 |13    |FDSE   |    10|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:05 ; elapsed = 00:04:38 . Memory (MB): peak = 1375.648 ; gain = 364.344
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:48 ; elapsed = 00:06:09 . Memory (MB): peak = 1495.461 ; gain = 483.117
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:37 ; elapsed = 00:04:11 . Memory (MB): peak = 1375.648 ; gain = 265.598
-Synthesis Optimization Complete : Time (s): cpu = 00:04:05 ; elapsed = 00:04:38 . Memory (MB): peak = 1375.648 ; gain = 364.344
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:36 ; elapsed = 00:05:50 . Memory (MB): peak = 1495.461 ; gain = 394.781
+Synthesis Optimization Complete : Time (s): cpu = 00:03:48 ; elapsed = 00:06:11 . Memory (MB): peak = 1495.461 ; gain = 483.117
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.725 . Memory (MB): peak = 1375.648 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 4444 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1495.461 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 4381 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1375.648 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1495.461 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 185 instances were transformed.
-  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 53 instances
+  A total of 202 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 70 instances
   RAM64M => RAM64M (RAMD64E(x4)): 132 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-43 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+172 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:43 ; elapsed = 00:05:48 . Memory (MB): peak = 1375.648 ; gain = 364.344
+synth_design: Time (s): cpu = 00:04:10 ; elapsed = 00:06:39 . Memory (MB): peak = 1495.461 ; gain = 483.117
 INFO: [Common 17-1381] The checkpoint 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.runs/astar_design_astar_stream_0_0_synth_1/astar_design_astar_stream_0_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1375.648 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 1495.461 ; gain = 0.000
+write_vhdl: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1495.461 ; gain = 0.000
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP astar_design_astar_stream_0_0, cache-ID = 5f09434dce851c01
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP astar_design_astar_stream_0_0, cache-ID = ff4263ddfc22f3e2
 INFO: [Coretcl 2-1174] Renamed 23 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar.runs/astar_design_astar_stream_0_0_synth_1/astar_design_astar_stream_0_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1375.648 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 1495.461 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file astar_design_astar_stream_0_0_utilization_synth.rpt -pb astar_design_astar_stream_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jun 20 14:25:05 2023...
+write_vhdl: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1495.461 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 21 13:24:20 2023...

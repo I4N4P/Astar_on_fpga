@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="astar_api_24" location="C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_api_24" platform="C:/Users/dawid/SDUP/astar_pathfinder_co-processor_on_fpga/astar/astar_hw_24/export/astar_hw_24/astar_hw_24.xpfm" platformUID="xilinx:arty-z7-20::0.0(custom)" systemProject="astar_api_24_system" sysConfig="astar_hw_24" runtime="C/C++" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="5cc8e6793dac13391b87e61ec509b55d">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.1574610429">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.969611158" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>
